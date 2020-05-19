@@ -1,4 +1,4 @@
-// Inline code taken from proxy.queensu.ca
+// ########### All code in this file is from proxy.queensu.ca ################
 
 function fix_url(url_string) {
 	var vars = new Array();
@@ -42,35 +42,35 @@ function fix_url(url_string) {
 	return(url_string);
 }
 
-    function isValidURL(url){
-        var RegExp = /^(([\w]+:)?\/\/)?(([\d\w]|%[a-fA-f\d]{2,2})+(:([\d\w]|%[a-fA-f\d]{2,2})+)?@)?([\d\w][-\d\w]{0,253}[\d\w]\.)+[\w]{2,4}(:[\d]+)?(\/([-+_~.\d\w]|%[a-fA-f\d]{2,2})*)*(\?(&?([-+_~.\d\w]|%[a-fA-f\d]{2,2})=?)*)?(#([-+_~.\d\w]|%[a-fA-f\d]{2,2})*)?$/;
-        if(RegExp.test(url)){
-            return true;
-        }else{
-            return false;
-        }
+function isValidURL(url){
+    var RegExp = /^(([\w]+:)?\/\/)?(([\d\w]|%[a-fA-f\d]{2,2})+(:([\d\w]|%[a-fA-f\d]{2,2})+)?@)?([\d\w][-\d\w]{0,253}[\d\w]\.)+[\w]{2,4}(:[\d]+)?(\/([-+_~.\d\w]|%[a-fA-f\d]{2,2})*)*(\?(&?([-+_~.\d\w]|%[a-fA-f\d]{2,2})=?)*)?(#([-+_~.\d\w]|%[a-fA-f\d]{2,2})*)?$/;
+    if(RegExp.test(url)){
+        return true;
+    }else{
+        return false;
+    }
+}
+
+function checkField(){
+    var frm = document.frmGoto_url, error = "";
+    var url_value = frm.url.value;
+
+    if( (url_value.substring(0,7) != 'http://') && (url_value.substring(0,8) != 'https://') ) {
+        frm.url.value = 'http://' + url_value;
+        url_value = frm.url.value;
     }
 
-    function checkField(){
-        var frm = document.frmGoto_url, error = "";
-        var url_value = frm.url.value;
+    url_value = fix_url(frm.url.value);
+    frm.url.value = url_value;
 
-        if( (url_value.substring(0,7) != 'http://') && (url_value.substring(0,8) != 'https://') ) {
-          frm.url.value = 'http://' + url_value;
-          url_value = frm.url.value;
-        }
-
-        url_value = fix_url(frm.url.value);
-        frm.url.value = url_value;
-
-        if(!isValidURL(url_value)){
-            error += "Please enter a valid URL\n";
-        }
-
-        if(error != ""){
-            alert(error + ": " + url_value);
-            return false;
-        }else{
-            return true;
-        }
+    if(!isValidURL(url_value)){
+        error += "Please enter a valid URL\n";
     }
+
+    if(error != ""){
+        alert(error + ": " + url_value);
+        return false;
+    }else{
+        return true;
+    }
+}
