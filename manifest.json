@@ -12,10 +12,6 @@
     "default_title": "Queen's Proxy"
   },
   "permissions": [
-    "contextMenus",
     "tabs"
-  ],
-  "host_permissions": [
-    "http://login.proxy.queensu.ca/*"
   ]
 }
