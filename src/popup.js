@@ -7,7 +7,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
         function callback(tabs) {
             var currentTab = tabs[0]; // there will be only one in this array
-            alert(currentTab.url); // also has properties like currentTab.id
 
             var url = checkField(currentTab.url)
 

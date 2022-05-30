@@ -3,19 +3,11 @@
   "name": "Queen's Proxy Linker",
   "version": "0.2.0",
   "description": "This extension allows off campus links to be automatically generated for preferred pages.",
- 
-  "background": {
-    "service_worker": "src/background.js"
-  },
   "action": {
     "default_popup": "src/popup.html",
     "default_title": "Queen's Proxy"
   },
   "permissions": [
-    "contextMenus",
     "tabs"
-  ],
-  "host_permissions": [
-    "http://login.proxy.queensu.ca/*"
   ]
 }
