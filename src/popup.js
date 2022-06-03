@@ -20,8 +20,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 }, false);
 
-// below code is from proxy.queensu.ca login page
-
 function fix_url(url_string) {
 	var vars = new Array();
         var go_on = true;
@@ -72,8 +70,6 @@ function isValidURL(url){
         return false;
     }
 }
-
-// below is code from proxy.queensu.ca edited to suit the fucntion of this extension
 
 function checkField(url_value){
 
