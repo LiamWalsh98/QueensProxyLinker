@@ -12,7 +12,10 @@
   ],
   "browser_specific_settings": {
     "gecko": {
-      "id": "queens-proxy-linker@example.com"
+      "id": "queens-proxy-linker@example.com",
+      "data_collection_permissions": {
+        "required": ["none"]
+      }
     }
   }
 }
