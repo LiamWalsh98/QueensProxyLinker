@@ -10,12 +10,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
             var url = checkField(currentTab.url)
 
-            chrome.tabs.update({
+            // Cross-browser API compatibility
+            const browserAPI = (typeof browser !== 'undefined') ? browser : chrome;
+            browserAPI.tabs.update({
                 url: "https://login.proxy.queensu.ca/login?url=" + url
             });
         }
 
-        chrome.tabs.query(query, callback);
+        // Cross-browser API compatibility
+        const browserAPI = (typeof browser !== 'undefined') ? browser : chrome;
+        browserAPI.tabs.query(query, callback);
     }
 
 }, false);

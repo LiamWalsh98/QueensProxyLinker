@@ -9,5 +9,10 @@
   },
   "permissions": [
     "tabs"
-  ]
+  ],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "queens-proxy-linker@example.com"
+    }
+  }
 }
